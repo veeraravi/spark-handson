@@ -23,7 +23,7 @@
             <url>https://dl.bintray.com/spark-packages/maven/</url>
         </repository>
     </repositories>
-            <groupId>com.typesafe</groupId>
+           
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.crealytics/spark-excel -->
         <dependency>
@@ -33,6 +33,7 @@
         </dependency>
 
         <dependency>
+                  <groupId>com.typesafe</groupId>
             <artifactId>config</artifactId>
             <version>1.2.1</version>
         </dependency>
