@@ -1,0 +1,81 @@
+[
+
+  {
+
+    "customerId": 1,
+
+    "orderItems": [
+
+      {"id": 1, "productName": "Baseball", "itemCost": 9.99},
+
+      {"id": 2, "productName": "Bat", "itemCost":19.99}
+
+    ]
+
+  },
+
+  {
+
+    "customerId": 2,
+
+    "orderItems": [
+
+      {"id": 3, "productName": "Basketball", "itemCost": 7.99},
+
+      {"id": 4, "productName": "Shoes", "itemCost": 199.99}
+
+    ]
+
+  },
+
+  {
+
+    "customerId": 3,
+
+    "orderItems": [
+
+      {"id": 5, "productName": "Frisbee", "itemCost": 2.99},
+
+      {"id": 6, "productName": "Hat", "itemCost":5.99}
+
+    ]
+
+  },
+
+  {
+
+    "customerId": 4,
+
+    "orderItems": [
+
+      {"id": 7, "productName": "Pants", "itemCost": 10.99},
+
+      {"id": 8, "productName": "ties", "itemCost":12.99}
+
+    ]
+
+  }
+
+]
+
+Display top 5 customers by spend?
+
+
+object CustmerPurchase{
+
+def main(args:Array[String]):Unit={
+val spark = SparkSession.builder()....
+val sc = sparkContext
+
+val custDF = spark.read.json("path")
+val custOrderDF = custDF.select("customerId","orderItems.id".alias("orderid"),
+"orderItems.productName".alias("productName"),
+"orderItems.itemCost".alias("itemCost"))
+//val result = custOrderDF.Window.partitionBy('productName').orderBy("itemCost")
+
+val result = custOrderDF.groupBy("customerId").sum("itemCost")
+
+}
+
+}
+

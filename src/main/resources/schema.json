@@ -1,0 +1,74 @@
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "sequence",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  },
+    {
+    "name" : "id",
+    "type" : "long",
+    "nullable" : true,
+    "metadata" : { }
+  },
+    {
+    "name" : "trackingInfo",
+    "type" : {
+      "type" : "struct",
+      "fields" : [ {
+        "name" : "location",
+        "type" : "string",
+        "nullable" : true,
+        "metadata" : { }
+      }, {
+        "name" : "row",
+        "type" : "integer",
+        "nullable" : true,
+        "metadata" : { }
+      }, {
+        "name" : "trackId",
+        "type" : "long",
+        "nullable" : true,
+        "metadata" : { }
+      },
+        {
+          "name" : "listId",
+          "type" : "string",
+          "nullable" : true,
+          "metadata" : { }
+        }, {
+          "name" : "videoId",
+          "type" : "long",
+          "nullable" : true,
+          "metadata" : { }
+        }, {
+          "name" : "rank",
+          "type" : "integer",
+          "nullable" : true,
+          "metadata" : { }
+        }, {
+          "name" : "requestId",
+          "type" : "string",
+          "nullable" : true,
+          "metadata" : { }
+        }]
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "type",
+    "type": {
+      "containsNull": true,
+      "elementType": "string",
+      "type": "array"
+    },
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "time",
+    "type" : "long",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
