@@ -1,0 +1,16 @@
+{
+  "oracle": {
+    "host": "<oracle_host>",
+    "port": "<oracle_port>",
+    "service_name": "<oracle_service_name>",
+    "username": "<oracle_username>",
+    "password": "<oracle_password>"
+  },
+  "sql_server": {
+    "host": "<sql_server_host>",
+    "database": "<sql_server_database>",
+    "username": "<sql_server_username>",
+    "password": "<sql_server_password>"
+  },
+  "table_name": "<table_name>"
+}
