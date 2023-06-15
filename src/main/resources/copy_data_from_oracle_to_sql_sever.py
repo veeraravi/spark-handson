@@ -22,6 +22,9 @@ table_name = config['table_name']
 spark = SparkSession.builder \
     .appName("Oracle to SQL Server") \
     .config("spark.sql.execution.arrow.enabled", "true") \
+    .config("spark.executor.memory", "8g")  # Adjust based on available memory
+    .config("spark.executor.cores", "4")  # Adjust based on available cores
+    .config("spark.sql.shuffle.partitions", "200")  # Adjust based on available resources
     .getOrCreate()
 
 # Connect to Oracle
